@@ -1,8 +1,8 @@
 import { Kafka } from "kafkajs";
 
-// Create a new Kafka client instance.
-// clientId: A unique identifier for the client in the cluster.
-// brokers: An array of seed brokers used to establish the initial connection.
+// We set up our connection to Kafka here.
+// 'clientId' is just the name of our app.
+// 'brokers' tells the app where Kafka is running (which is usually localhost:9092)
 export const kafka = new Kafka({
   clientId: "my-app",
   brokers: ['localhost:9092'],

@@ -1,16 +1,15 @@
 import { kafka } from "./client.js";
 
 async function init() {
-  // Create an admin client to manage Kafka infrastructure (like creating topics)
+  // admin helps us create and manage topics (like folders to store messages)
   const admin = kafka.admin();
   
-  console.log("Connecting to Kafka...");
+  console.log("Connecting admin to Kafka...");
   await admin.connect();
-  console.log("Connected to Kafka");
+  console.log("Admin connected!");
 
-  // Create a new topic named "rider-updates" with 2 partitions
-  // Partitions allow the data in the topic to be split across multiple brokers
-  // for horizontal scalability and parallel processing.
+  // Here we are creating a new topic called "rider-updates"
+  // We divide it into 2 partitions (chunks) so it can handle more work at once
   await admin.createTopics({
     topics: [
       {
@@ -20,9 +19,9 @@ async function init() {
     ],
   });
   
-  // Disconnect the admin client once the topic management is done
+  // We are done setting things up, so we disconnect
   await admin.disconnect();
-  console.log("disconnecting admin ")
+  console.log("Admin disconnected");
 }
 
 init().catch(console.error);
