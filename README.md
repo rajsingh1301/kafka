@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://kafka.apache.org/images/logo.png" alt="Kafka Logo" width="200"/>
+  <img src="./WIDE%20-%20White%20on%20Transparent.png" alt="Kafka Logo" width="300"/>
   <h1>🚀 Node.js + KafkaJS Data Pipeline</h1>
   <p><i>A sleek, modern, and high-performance event streaming application.</i></p>
 
